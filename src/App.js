@@ -1,13 +1,13 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Header from "./components/Header";
-import AllContacts from "./components/AllContacts";
+import ContactsContainer from "./components/ContactsContainer";
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <AllContacts />
+      <ContactsContainer />
     </div>
   );
 }
