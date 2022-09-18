@@ -63,7 +63,7 @@ export default function PrimarySearchAppBar() {
     setAge(event.target.value);
   };
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+  
 
   const isMenuOpen = Boolean(anchorEl);
 
@@ -71,13 +71,11 @@ export default function PrimarySearchAppBar() {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleMobileMenuClose = () => {
-    setMobileMoreAnchorEl(null);
-  };
+ 
 
   const handleMenuClose = () => {
     setAnchorEl(null);
-    handleMobileMenuClose();
+    
   };
 
   const menuId = "primary-search-account-menu";
