@@ -63,7 +63,6 @@ export default function PrimarySearchAppBar() {
     setAge(event.target.value);
   };
   const [anchorEl, setAnchorEl] = React.useState(null);
-  
 
   const isMenuOpen = Boolean(anchorEl);
 
@@ -71,11 +70,8 @@ export default function PrimarySearchAppBar() {
     setAnchorEl(event.currentTarget);
   };
 
- 
-
   const handleMenuClose = () => {
     setAnchorEl(null);
-    
   };
 
   const menuId = "primary-search-account-menu";
@@ -123,19 +119,30 @@ export default function PrimarySearchAppBar() {
             </Select>
           </FormControl>
 
-          <Button sx={{ fontWeight: "bold" }} color="primary">
+          <Button
+            style={{
+              color: "purple",
+              fontWeight: "600",
+              textTransform: "capitalize",
+            }}
+          >
             Dashboard
           </Button>
-          <Search sx={{ margin: "0 auto", marginLeft: "auto !important" }}>
+          <Search
+            sx={{
+              margin: "0 auto",
+              marginLeft: "auto !important",
+            }}
+          >
             <SearchIconWrapper>
-              <SearchIcon />
+              <SearchIcon style={{ color: "#c4c4c4" }} />
             </SearchIconWrapper>
             <StyledInputBase
               style={{
-                border: "1px solid grey",
-                borderRadius: "10px",
+                border: "1px solid #c4c4c4",
+                borderRadius: "20px",
               }}
-              placeholder="Search…"
+              placeholder="Search Full Website"
               inputProps={{ "aria-label": "search" }}
             />
           </Search>

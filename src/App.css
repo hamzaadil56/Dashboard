@@ -3,3 +3,16 @@
   padding: 0;
   box-sizing: border-box;
 }
+:root {
+  --btn_blue_color: #0c7adb;
+  --grey-color: #c4c4c4;
+}
+.table-header {
+  color: var(--btn_blue_color);
+}
+.cell {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  place-items: center;
+}

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 import { Typography } from "@mui/material";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Link from "@mui/material/Link";
@@ -9,14 +9,15 @@ import ButtonGroup from "@mui/material/ButtonGroup";
 import SearchIcon from "@mui/icons-material/Search";
 import { styled, alpha } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 import AppsIcon from "@mui/icons-material/Apps";
-import GridOnIcon from '@mui/icons-material/GridOn';
-import SettingsIcon from '@mui/icons-material/Settings';
-import ViewListIcon from '@mui/icons-material/ViewList';
-
-
+import ViewListIcon from "@mui/icons-material/ViewList";
+import AddIcon from "@mui/icons-material/Add";
+import DataGridContainer from "./DataGridContainer";
+import ViewButton from "./ViewBtn";
+import OptionsBtn from "./OptionsBtn";
+import "../App.css";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -58,7 +59,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 const AllContacts = () => {
-
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClickOnMenu = (event) => {
@@ -108,8 +108,12 @@ const AllContacts = () => {
           </Typography>
         </div>
         <div>
-          <Button sx={{ margin: "2rem" }} variant="contained">
-            New Contact
+          <Button
+            sx={{ margin: "2rem" }}
+            style={{ backgroundColor: "var(--btn_blue_color)" }}
+            variant="contained"
+          >
+            New Contact <AddIcon style={{ fontSize: "20px" }} />
           </Button>
         </div>
       </Box>
@@ -145,78 +149,40 @@ const AllContacts = () => {
           </Button>
         </ButtonGroup>
       </div>
-      <Box sx={{padding:"1rem 2rem", display:"flex", justifyContent:"space-between"}}>
-      <Search sx={{marginLeft:"0 !important"}}>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              style={{
-                border: "1px solid grey",
-                borderRadius: "10px",
-              }}
-              placeholder="Search…"
-              inputProps={{ "aria-label": "search" }}
-            />
-          </Search>
-          <div>
-          <Button
-        id="basic-button"
-        aria-controls={open ? 'basic-menu' : undefined}
-        aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
-        onClick={handleClickOnMenu}
-       
-      ><AppsIcon/>
-        Export
-      </Button>
-      <Button
-        id="basic-button"
-        aria-controls={open ? 'basic-menu' : undefined}
-        aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
-        onClick={handleClickOnMenu}
-       
-      ><GridOnIcon/>
-        View
-      </Button>
-      <Button
-        id="basic-button"
-        aria-controls={open ? 'basic-menu' : undefined}
-        aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
-        onClick={handleClickOnMenu}
-        
-      ><SettingsIcon/>
-        Options
-      </Button>
-      <Button
-        id="basic-button"
-        aria-controls={open ? 'basic-menu' : undefined}
-        aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
-        onClick={handleClickOnMenu}
-        
-      ><ViewListIcon/>
-        Group
-      </Button>
-      <Menu
-        id="basic-menu"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          'aria-labelledby': 'basic-button',
+      <Box
+        sx={{
+          padding: "1rem 2rem",
+          display: "flex",
+          justifyContent: "space-between",
         }}
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
-      </Menu>
-          </div>
-
+        <Search
+          sx={{
+            width: "30% !important",
+          }}
+        >
+          <SearchIconWrapper>
+            <SearchIcon style={{ color: "#c4c4c4" }} />
+          </SearchIconWrapper>
+          <StyledInputBase
+            style={{
+              border: "1px solid #c4c4c4",
+              color: "#c4c4c4",
+              borderRadius: "20px",
+            }}
+            inputProps={{ "aria-label": "search" }}
+          />
+        </Search>
+        <Box sx={{ display: "flex" }}>
+          <Button>
+            <AppsIcon />
+            Export
+          </Button>
+          <ViewButton />
+          <OptionsBtn />
+        </Box>
       </Box>
-      
+      <DataGridContainer />
     </div>
   );
 };
