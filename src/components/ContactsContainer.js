@@ -9,10 +9,8 @@ import ButtonGroup from "@mui/material/ButtonGroup";
 import SearchIcon from "@mui/icons-material/Search";
 import { styled, alpha } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
+
 import AppsIcon from "@mui/icons-material/Apps";
-import ViewListIcon from "@mui/icons-material/ViewList";
 import AddIcon from "@mui/icons-material/Add";
 import DataGridContainer from "./DataGridContainer";
 import ViewButton from "./ViewBtn";
@@ -59,15 +57,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 const AllContacts = () => {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-  const handleClickOnMenu = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
   function handleClick(event) {
     event.preventDefault();
     console.info("You clicked a breadcrumb.");

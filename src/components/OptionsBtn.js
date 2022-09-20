@@ -23,7 +23,7 @@ export default function OptionsBtn() {
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
       >
-        <OptionsBtn /> Options
+        <SettingsIcon /> Options
       </Button>
       <Menu
         id="basic-menu"
