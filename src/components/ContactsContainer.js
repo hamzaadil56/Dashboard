@@ -165,7 +165,7 @@ const AllContacts = () => {
             inputProps={{ "aria-label": "search" }}
           />
         </Search>
-        <Box sx={{ display: "flex" }}>
+        <Box sx={{ display: "flex", alignItems: "center" }}>
           <Button>
             <AppsIcon />
             Export
