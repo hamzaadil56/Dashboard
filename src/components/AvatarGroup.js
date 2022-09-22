@@ -3,7 +3,6 @@ import Avatar from "@mui/material/Avatar";
 import Popover from "@mui/material/Popover";
 import { Typography } from "@mui/material";
 import Box from "@mui/material/Box";
-import Badge from "@mui/material/Badge";
 import Chip from "@mui/material/Chip";
 
 import AvatarGroup from "@mui/material/AvatarGroup";
