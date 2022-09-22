@@ -3,6 +3,8 @@ import Avatar from "@mui/material/Avatar";
 import Popover from "@mui/material/Popover";
 import { Typography } from "@mui/material";
 import Box from "@mui/material/Box";
+import Badge from "@mui/material/Badge";
+import Chip from "@mui/material/Chip";
 
 import AvatarGroup from "@mui/material/AvatarGroup";
 
@@ -51,10 +53,16 @@ export default function GroupAvatars() {
         disableRestoreFocus
       >
         <Box>
-          <Box style={{ width: "200px", height: "200px" }}>
-            <img width={"50px"} alt="" />
+          <Box style={{ width: "200px", height: "200px", display: "flex" }}>
+            <img
+              width={"50px"}
+              height="50px"
+              src="././images/img_avatar.png"
+              alt=""
+            />
             <Typography variant="h6">John</Typography>
           </Box>
+          <Chip label="Employee" color="primary" />
         </Box>
       </Popover>
     </>
