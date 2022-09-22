@@ -3,13 +3,13 @@ import { styled, alpha } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-
 import MenuIcon from "@mui/icons-material/Menu";
+
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
-import GridOnIcon from "@mui/icons-material/GridOn";
-import { Typography } from "@mui/material";
+import ViewListIcon from "@mui/icons-material/ViewList";
 
 const StyledMenu = styled((props) => (
   <Menu
@@ -28,7 +28,7 @@ const StyledMenu = styled((props) => (
   "& .MuiPaper-root": {
     borderRadius: 6,
     marginTop: theme.spacing(1),
-    minWidth: 200,
+    minWidth: 180,
     color:
       theme.palette.mode === "light"
         ? "rgb(55, 65, 81)"
@@ -73,8 +73,8 @@ export default function CustomizedMenus() {
         disableElevation
         onClick={handleClick}
       >
-        <GridOnIcon />
-        View
+        <ViewListIcon />
+        Group
       </Button>
       <StyledMenu
         id="demo-customized-menu"
@@ -90,49 +90,10 @@ export default function CustomizedMenus() {
           onClick={handleClose}
           disableRipple
         >
-          <FormGroup sx={{ display: "flex" }}>
-            <FormControlLabel control={<Checkbox />} label="Contact Name" />
-          </FormGroup>
-          <MenuIcon />
-        </MenuItem>
-        <MenuItem
-          style={{ display: "flex", justifyContent: "space-between" }}
-          onClick={handleClose}
-          disableRipple
-        >
           <FormGroup>
-            <FormControlLabel control={<Checkbox />} label="Contact Person" />
+            <FormControlLabel control={<Checkbox />} label="Group" />
           </FormGroup>
-          <MenuIcon />
-        </MenuItem>
-        <MenuItem
-          style={{ display: "flex", justifyContent: "space-between" }}
-          onClick={handleClose}
-          disableRipple
-        >
-          <FormGroup>
-            <FormControlLabel control={<Checkbox />} label="Email" />
-          </FormGroup>
-          <MenuIcon />
-        </MenuItem>
-        <MenuItem
-          style={{ display: "flex", justifyContent: "space-between" }}
-          onClick={handleClose}
-          disableRipple
-        >
-          <FormGroup>
-            <FormControlLabel control={<Checkbox />} label="Website" />
-          </FormGroup>
-          <MenuIcon />
-        </MenuItem>
-        <MenuItem
-          style={{ display: "flex", justifyContent: "space-between" }}
-          onClick={handleClose}
-          disableRipple
-        >
-          <FormGroup>
-            <FormControlLabel control={<Checkbox />} label="Address" />
-          </FormGroup>
+
           <MenuIcon />
         </MenuItem>
         <MenuItem
@@ -161,48 +122,8 @@ export default function CustomizedMenus() {
           disableRipple
         >
           <FormGroup>
-            <FormControlLabel control={<Checkbox />} label="Phone No" />
+            <FormControlLabel control={<Checkbox />} label="Tag" />
           </FormGroup>
-          <MenuIcon />
-        </MenuItem>
-        <MenuItem
-          style={{ display: "flex", justifyContent: "space-between" }}
-          onClick={handleClose}
-          disableRipple
-        >
-          <Typography>Fax</Typography>
-          <MenuIcon />
-        </MenuItem>
-        <MenuItem
-          style={{ display: "flex", justifyContent: "space-between" }}
-          onClick={handleClose}
-          disableRipple
-        >
-          <Typography>Fax</Typography>
-          <MenuIcon />
-        </MenuItem>
-        <MenuItem
-          style={{ display: "flex", justifyContent: "space-between" }}
-          onClick={handleClose}
-          disableRipple
-        >
-          <Typography>Fax</Typography>
-          <MenuIcon />
-        </MenuItem>
-        <MenuItem
-          style={{ display: "flex", justifyContent: "space-between" }}
-          onClick={handleClose}
-          disableRipple
-        >
-          <Typography>Fax</Typography>
-          <MenuIcon />
-        </MenuItem>
-        <MenuItem
-          style={{ display: "flex", justifyContent: "space-between" }}
-          onClick={handleClose}
-          disableRipple
-        >
-          <Typography>Fax</Typography>
           <MenuIcon />
         </MenuItem>
       </StyledMenu>

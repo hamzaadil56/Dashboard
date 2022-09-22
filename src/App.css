@@ -16,3 +16,16 @@
   justify-content: center;
   place-items: center;
 }
+.search-input {
+  height: 8vh !important;
+}
+.search-input input {
+  width: 30vw !important;
+}
+.MuiSelect-select {
+  padding: 0 1rem !important;
+}
+.MuiButtonGroup-grouped {
+  border-bottom: 0 !important;
+  border-radius: 0 !important;
+}

@@ -2,12 +2,14 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import { DataGrid } from "@mui/x-data-grid";
 import "../App.css";
+import GroupAvatars from "./AvatarGroup";
+import { Typography } from "@mui/material";
 
 const columns = [
   {
     field: "contact",
-    headerName: "Contact Name",
-    minWidth: 150,
+    headerName: "Contact",
+    minWidth: 200,
     height: "10vh",
     headerClassName: "table-header",
     headerAlign: "center",
@@ -17,7 +19,37 @@ const columns = [
   {
     field: "persons",
     headerName: "Contact Persons",
-    minWidth: 150,
+    renderCell: () => {
+      return (
+        <Box
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <GroupAvatars />
+          <Typography
+            style={{ color: "var(--btn_blue_color)", margin: "0 1rem" }}
+            variant="p"
+          >
+            +3
+          </Typography>
+        </Box>
+      );
+    },
+    minWidth: 200,
+    height: "10vh",
+    headerClassName: "table-header",
+    headerAlign: "center",
+    cellClassName: "cell",
+    align: "center",
+  },
+
+  {
+    field: "country",
+    headerName: "Country",
+    minWidth: 200,
     height: "10vh",
     headerClassName: "table-header",
     headerAlign: "center",
@@ -27,138 +59,63 @@ const columns = [
   {
     field: "tags",
     headerName: "Tags",
-    minWidth: 150,
+    minWidth: 200,
     height: "10vh",
     headerClassName: "table-header",
     headerAlign: "center",
     cellClassName: "cell",
     align: "center",
   },
-  {
-    field: "country",
-    headerName: "Country",
-    minWidth: 150,
-    height: "10vh",
-    headerClassName: "table-header",
-    headerAlign: "center",
-    cellClassName: "cell",
-    align: "center",
-  },
-  {
-    field: "city",
-    headerName: "City",
-    minWidth: 150,
-    height: "10vh",
-    headerClassName: "table-header",
-    headerAlign: "center",
-    cellClassName: "cell",
-    align: "center",
-  },
-  {
-    field: "contact_details",
-    headerName: "Contact Details",
-    minWidth: 150,
-    height: "10vh",
-    headerClassName: "table-header",
-    headerAlign: "center",
-    cellClassName: "cell",
-    align: "center",
-  },
-  {
-    field: "financial_details",
-    headerName: "Financial Details",
-    minWidth: 150,
-    height: "10vh",
-    headerClassName: "table-header",
-    headerAlign: "center",
-    cellClassName: "cell",
-    align: "center",
-  },
-  {
-    field: "they_owe",
-    headerName: "They Owe",
-    minWidth: 150,
+  //   {
+  //     field: "city",
+  //     headerName: "City",
+  //     minWidth: 150,
+  //     height: "10vh",
+  //     headerClassName: "table-header",
+  //     headerAlign: "center",
+  //     cellClassName: "cell",
+  //     align: "center",
+  //   },
+  //   {
+  //     field: "contact_details",
+  //     headerName: "Contact Details",
+  //     minWidth: 150,
+  //     height: "10vh",
+  //     headerClassName: "table-header",
+  //     headerAlign: "center",
+  //     cellClassName: "cell",
+  //     align: "center",
+  //   },
+  //   {
+  //     field: "financial_details",
+  //     headerName: "Financial Details",
+  //     minWidth: 150,
+  //     height: "10vh",
+  //     headerClassName: "table-header",
+  //     headerAlign: "center",
+  //     cellClassName: "cell",
+  //     align: "center",
+  //   },
+  //   {
+  //     field: "they_owe",
+  //     headerName: "They Owe",
+  //     minWidth: 150,
 
-    editable: true,
-    headerAlign: "center",
-    headerClassName: "table-header",
-    cellClassName: "cell",
-    align: "center",
-  },
+  //     editable: true,
+  //     headerAlign: "center",
+  //     headerClassName: "table-header",
+  //     cellClassName: "cell",
+  //     align: "center",
+  //   },
 ];
 
 const rows = [
   {
     id: 1,
-    contact: "Jon",
-    persons: "Many Persons",
-    tags: "tags",
+    contact: "adsd",
+    persons: <GroupAvatars />,
     country: "Pakistan",
-    city: "Karachi",
-    contact_details: 1323123,
-    financial_details: "123skfe",
-    they_owe: 12323,
-    you_owe: 123434,
-  },
-  {
-    id: 1,
-    contact: "Jon",
-    persons: "Many Persons",
     tags: "tags",
-    country: "Pakistan",
-    city: "Karachi",
-    contact_details: 1323123,
-    financial_details: "123skfe",
-    they_owe: 12323,
-    you_owe: 123434,
-  },
-  {
-    id: 1,
-    contact: "Jon",
-    persons: "Many Persons",
-    tags: "tags",
-    country: "Pakistan",
-    city: "Karachi",
-    contact_details: 1323123,
-    financial_details: "123skfe",
-    they_owe: 12323,
-    you_owe: 123434,
-  },
-  {
-    id: 1,
-    contact: "Jon",
-    persons: "Many Persons",
-    tags: "tags",
-    country: "Pakistan",
-    city: "Karachi",
-    contact_details: 1323123,
-    financial_details: "123skfe",
-    they_owe: 12323,
-    you_owe: 123434,
-  },
-  {
-    id: 1,
-    contact: "Jon",
-    persons: "Many Persons",
-    tags: "tags",
-    country: "Pakistan",
-    city: "Karachi",
-    contact_details: 1323123,
-    financial_details: "123skfe",
-    they_owe: 12323,
-    you_owe: 123434,
-  },
-  {
-    id: 1,
-    contact: "Jon",
-    persons: "Many Persons",
-    tags: "tags",
-    country: "Pakistan",
-    city: "Karachi",
-    contact_details: 1323123,
-    financial_details: "123skfe",
-    they_owe: 12323,
-    you_owe: 123434,
   },
 ];
 
@@ -167,7 +124,8 @@ export default function DataGridDemo() {
     <Box
       sx={{
         height: 400,
-        width: "100%",
+        width: "70%",
+        margin: "0 auto",
         // "& .cell": {
         //   backgroundColor: "rgba(224, 183, 60, 0.55)",
         //   color: "#1a3e72",

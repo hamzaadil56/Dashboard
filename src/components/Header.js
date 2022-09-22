@@ -107,6 +107,7 @@ export default function PrimarySearchAppBar() {
         <Toolbar>
           <FormControl sx={{ m: 1, minWidth: 200 }}>
             <Select
+              style={{ padding: "0 1rem !important" }}
               value={age}
               onChange={handleChange}
               displayEmpty
@@ -129,15 +130,17 @@ export default function PrimarySearchAppBar() {
             Dashboard
           </Button>
           <Search
+            className="search-container"
             sx={{
               margin: "0 auto",
               marginLeft: "auto !important",
             }}
           >
-            <SearchIconWrapper>
+            <SearchIconWrapper className="search-icon">
               <SearchIcon style={{ color: "#c4c4c4" }} />
             </SearchIconWrapper>
             <StyledInputBase
+              className="search-input"
               style={{
                 border: "1px solid #c4c4c4",
                 borderRadius: "20px",

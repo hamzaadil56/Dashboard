@@ -15,6 +15,7 @@ import AddIcon from "@mui/icons-material/Add";
 import DataGridContainer from "./DataGridContainer";
 import ViewButton from "./ViewBtn";
 import OptionsBtn from "./OptionsBtn";
+import GroupBtn from "./GridBtn";
 import "../App.css";
 
 const Search = styled("div")(({ theme }) => ({
@@ -90,8 +91,8 @@ const AllContacts = () => {
         <div>
           <Typography
             sx={{ margin: "2rem", textAlign: "left" }}
-            variant="h4"
-            component="h4"
+            variant="h5"
+            component="h5"
           >
             All Contacts
           </Typography>
@@ -146,6 +147,7 @@ const AllContacts = () => {
         }}
       >
         <Search
+          className="search-container"
           sx={{
             width: "30% !important",
           }}
@@ -154,6 +156,7 @@ const AllContacts = () => {
             <SearchIcon style={{ color: "#c4c4c4" }} />
           </SearchIconWrapper>
           <StyledInputBase
+            className="search-input"
             style={{
               border: "1px solid #c4c4c4",
               color: "#c4c4c4",
@@ -169,6 +172,7 @@ const AllContacts = () => {
           </Button>
           <ViewButton />
           <OptionsBtn />
+          <GroupBtn />
         </Box>
       </Box>
       <DataGridContainer />
