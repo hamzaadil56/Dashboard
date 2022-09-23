@@ -15,6 +15,7 @@ import Button from "@mui/material/Button";
 import FormControl from "@mui/material/FormControl";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import Select from "@mui/material/Select";
+import { Typography } from "@mui/material";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -109,15 +110,15 @@ export default function PrimarySearchAppBar() {
             <Select
               style={{
                 padding: "0 1rem !important",
-                backgroundColor: "var(--grey-color)",
+                backgroundColor: "var(--light-grey)",
+                borderRadius: "none",
               }}
               value={age}
               onChange={handleChange}
               displayEmpty
               inputProps={{ "aria-label": "Without label" }}
             >
-              <MenuItem value="">Company</MenuItem>
-              <MenuItem value={1}>Company1</MenuItem>
+              <MenuItem value="">Company1</MenuItem>
               <MenuItem value={2}>Company2</MenuItem>
               <MenuItem value={3}>Company3</MenuItem>
             </Select>
@@ -128,6 +129,7 @@ export default function PrimarySearchAppBar() {
               color: "var(--dark-blue)",
               fontWeight: "600",
               textTransform: "capitalize",
+              backgroundColor: "var(--light-grey)",
             }}
           >
             Dashboard
@@ -174,17 +176,24 @@ export default function PrimarySearchAppBar() {
             >
               <AppsOutlinedIcon style={{ color: "grey", marginLeft: "1rem" }} />
             </IconButton>
-            <IconButton
-              size="large"
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircleOutlinedIcon />
-            </IconButton>
+            <div>
+              <IconButton
+                size="large"
+                edge="end"
+                aria-label="account of current user"
+                aria-controls={menuId}
+                aria-haspopup="true"
+                onClick={handleProfileMenuOpen}
+                color="inherit"
+              >
+                <AccountCircleOutlinedIcon />
+              </IconButton>
+              <div>
+                <Typography style={{ margin: 0, color: "grey" }} variant="p">
+                  Profile
+                </Typography>
+              </div>
+            </div>
           </Box>
         </Toolbar>
       </AppBar>

@@ -3,20 +3,86 @@ import Box from "@mui/material/Box";
 import { DataGrid } from "@mui/x-data-grid";
 import "../App.css";
 import GroupAvatars from "./AvatarGroup";
-import { Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import Chip from "@mui/material/Chip";
 import PersonsListPopover from "./PersonsListPopover";
+import Badge from "@mui/material/Badge";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+
+const theme = createTheme({
+  status: {
+    danger: "#e53e3e",
+  },
+  palette: {
+    primary: {
+      main: "#0971f1",
+      darker: "#053e85",
+    },
+    neutral: {
+      main: "yellow",
+      contrastText: "black",
+    },
+  },
+});
 
 const columns = [
   {
     field: "contact",
     headerName: "Contact",
     minWidth: 200,
-    height: "10vh",
+    height: "20vh",
     headerClassName: "table-header",
     headerAlign: "center",
     cellClassName: "cell",
     align: "center",
+    renderCell: () => {
+      return (
+        <Box>
+          <Typography
+            style={{ color: "var(--btn_blue_color)", fontSize: "large" }}
+            variant="h6"
+          >
+            Contact Name English
+          </Typography>
+          <div>
+            <Typography style={{ color: "var(--btn_blue_color)" }} variant="p">
+              Arabic Name
+            </Typography>
+          </div>
+          <Typography style={{ color: "varggrey" }} variant="p">
+            A/C:78797887
+          </Typography>
+          <div>
+            <Typography style={{ color: "grey" }} variant="p">
+              Note: This is the contact relating jobs
+            </Typography>
+            <ThemeProvider theme={theme}>
+              <Badge
+                badgeContent={1}
+                style={{ color: "black", backgroundColor: "yellow" }}
+                color="neutral"
+              >
+                <Button
+                  style={{ width: "100px", fontSize: "10px" }}
+                  variant="contained"
+                  color="primary"
+                >
+                  Organization{" "}
+                </Button>
+              </Badge>
+            </ThemeProvider>
+          </div>
+          <div>
+            <Typography
+              style={{ color: "grey", fontSize: "small" }}
+              variant="p"
+            >
+              Search Key Words: text1,text2,text3,text4,text5
+            </Typography>
+          </div>
+        </Box>
+      );
+    },
   },
   {
     field: "persons",
@@ -43,7 +109,7 @@ const columns = [
       );
     },
     minWidth: 200,
-    height: "10vh",
+    height: "20vh",
     headerClassName: "table-header",
     headerAlign: "center",
     cellClassName: "cell",
@@ -54,7 +120,7 @@ const columns = [
     field: "country",
     headerName: "Country",
     minWidth: 200,
-    height: "10vh",
+    height: "20vh",
     headerClassName: "table-header",
     headerAlign: "center",
     cellClassName: "cell",
@@ -64,7 +130,7 @@ const columns = [
     field: "tags",
     headerName: "Tags",
     minWidth: 200,
-    height: "10vh",
+    height: "20vh",
     headerClassName: "table-header",
     headerAlign: "center",
     renderCell: () => {
@@ -154,6 +220,7 @@ export default function DataGridDemo() {
       }}
     >
       <DataGrid
+        getRowHeight={() => "auto"}
         rows={rows}
         columns={columns}
         pageSize={5}

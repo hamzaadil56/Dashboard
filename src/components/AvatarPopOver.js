@@ -10,6 +10,24 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import EmailIconPopover from "./EmailIconPopover";
 import PhoneIconPopover from "./PhoneIconPopover";
 import WhatsAppIconPopover from "./WhatsappIconPopover";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Badge from "@mui/material/Badge";
+
+const theme = createTheme({
+  status: {
+    danger: "#e53e3e",
+  },
+  palette: {
+    primary: {
+      main: "#0971f1",
+      darker: "#053e85",
+    },
+    neutral: {
+      main: "yellow",
+      contrastText: "black",
+    },
+  },
+});
 
 const AvatarPopOver = ({ person }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -73,7 +91,11 @@ const AvatarPopOver = ({ person }) => {
             </Box>
           </Box>
           <Box style={{ margin: "1rem 0" }}>
-            <Chip label="Employee" color="primary" />
+            <ThemeProvider theme={theme}>
+              <Badge badgeContent={2} color="neutral">
+                <Chip label="Employee" color="primary" />
+              </Badge>
+            </ThemeProvider>
           </Box>
           <Box sx={{ display: "flex" }}>
             <EmailIconPopover>
