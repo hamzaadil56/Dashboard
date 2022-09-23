@@ -6,6 +6,7 @@
 :root {
   --btn_blue_color: #0c7adb;
   --grey-color: #c4c4c4;
+  --dark-blue: #0866b8;
 }
 .table-header {
   color: var(--btn_blue_color);
@@ -17,10 +18,10 @@
   place-items: center;
 }
 .search-input {
-  height: 8vh !important;
+  height: 5vh !important;
 }
 .search-input input {
-  width: 30vw !important;
+  width: 25vw !important;
 }
 .MuiSelect-select {
   padding: 0 1rem !important;
@@ -28,4 +29,16 @@
 .MuiButtonGroup-grouped {
   border-bottom: 0 !important;
   border-radius: 0 !important;
+}
+.chip {
+  height: 20px !important;
+  padding: 2px;
+  margin: 0.1rem 1rem;
+}
+.chip-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.icons-popover {
+  padding: 2rem;
 }

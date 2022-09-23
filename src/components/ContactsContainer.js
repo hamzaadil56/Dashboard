@@ -9,6 +9,7 @@ import ButtonGroup from "@mui/material/ButtonGroup";
 import SearchIcon from "@mui/icons-material/Search";
 import { styled, alpha } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
+import MenuItem from "@mui/material/MenuItem";
 
 import AppsIcon from "@mui/icons-material/Apps";
 import AddIcon from "@mui/icons-material/Add";
@@ -16,7 +17,10 @@ import DataGridContainer from "./DataGridContainer";
 import ViewButton from "./ViewBtn";
 import OptionsBtn from "./OptionsBtn";
 import GroupBtn from "./GridBtn";
+import Pagination from "@mui/material/Pagination";
+
 import "../App.css";
+import Select from "@mui/material/Select";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -58,6 +62,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 const AllContacts = () => {
+  const [age, setAge] = React.useState("");
+
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
   function handleClick(event) {
     event.preventDefault();
     console.info("You clicked a breadcrumb.");
@@ -66,7 +75,7 @@ const AllContacts = () => {
     <Link
       underline="hover"
       key="1"
-      color="inherit"
+      color="text.primary"
       href="/"
       onClick={handleClick}
     >
@@ -75,13 +84,13 @@ const AllContacts = () => {
     <Link
       underline="hover"
       key="2"
-      color="inherit"
+      color="text.primary"
       href="/material-ui/getting-started/installation/"
       onClick={handleClick}
     >
       Groups
     </Link>,
-    <Typography key="3" color="text.primary">
+    <Typography key="3" color="inherit">
       Sub-Group
     </Typography>,
   ];
@@ -90,7 +99,7 @@ const AllContacts = () => {
       <Box sx={{ display: "flex", justifyContent: "space-between" }}>
         <div>
           <Typography
-            sx={{ margin: "2rem", textAlign: "left" }}
+            sx={{ margin: "2rem", textAlign: "left", fontWeight: "600" }}
             variant="h5"
             component="h5"
           >
@@ -121,23 +130,70 @@ const AllContacts = () => {
       </Box>
       <div>
         <ButtonGroup
-          sx={{ margin: "2rem" }}
+          sx={{ margin: "2rem 0.1rem 2rem 2rem", textTransform: "capitalize" }}
           variant="outlined"
           aria-label="outlined button group"
         >
-          <Button style={{ color: "black", borderColor: "black" }}>
+          <Button
+            style={{
+              color: "black",
+              borderColor: "black",
+              textTransform: "capitalize",
+            }}
+          >
             All Contacts
           </Button>
-          <Button style={{ color: "black", borderColor: "black" }}>
+          <Button
+            style={{
+              color: "black",
+              borderColor: "black",
+              textTransform: "capitalize",
+            }}
+          >
+            Customers
+          </Button>
+          <Button
+            style={{
+              color: "black",
+              borderColor: "black",
+              textTransform: "capitalize",
+            }}
+          >
+            Suppliers
+          </Button>
+          <Button
+            style={{
+              color: "black",
+              borderColor: "black",
+              textTransform: "capitalize",
+            }}
+          >
             Employees
           </Button>
-          <Button style={{ color: "black", borderColor: "black" }}>
-            Organization
-          </Button>
-          <Button style={{ color: "black", borderColor: "black" }}>
-            Individual
+          <Button
+            style={{
+              color: "black",
+              borderColor: "black",
+              textTransform: "capitalize",
+            }}
+          >
+            Archive
           </Button>
         </ButtonGroup>
+        <Select
+          value={age}
+          style={{
+            width: "15vw",
+            padding: "0.5rem 0",
+          }}
+          onChange={handleChange}
+          displayEmpty
+        >
+          <MenuItem value="">Group</MenuItem>
+          <MenuItem value={1}>Group1</MenuItem>
+          <MenuItem value={2}>Group2</MenuItem>
+          <MenuItem value={3}>Group3</MenuItem>
+        </Select>
       </div>
       <Box
         sx={{
@@ -176,6 +232,12 @@ const AllContacts = () => {
         </Box>
       </Box>
       <DataGridContainer />
+      <Pagination
+        sx={{ margin: "0 auto", width: "50vw" }}
+        count={10}
+        variant="outlined"
+        color="primary"
+      />
     </div>
   );
 };

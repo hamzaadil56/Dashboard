@@ -4,6 +4,8 @@ import { DataGrid } from "@mui/x-data-grid";
 import "../App.css";
 import GroupAvatars from "./AvatarGroup";
 import { Typography } from "@mui/material";
+import Chip from "@mui/material/Chip";
+import PersonsListPopover from "./PersonsListPopover";
 
 const columns = [
   {
@@ -29,12 +31,14 @@ const columns = [
           }}
         >
           <GroupAvatars />
-          <Typography
-            style={{ color: "var(--btn_blue_color)", margin: "0 1rem" }}
-            variant="p"
-          >
-            +3
-          </Typography>
+          <PersonsListPopover>
+            <Typography
+              style={{ color: "var(--btn_blue_color)", margin: "0 1rem" }}
+              variant="p"
+            >
+              +3
+            </Typography>
+          </PersonsListPopover>
         </Box>
       );
     },
@@ -63,6 +67,22 @@ const columns = [
     height: "10vh",
     headerClassName: "table-header",
     headerAlign: "center",
+    renderCell: () => {
+      return (
+        <Box className="chip-container">
+          <Chip className="chip" label="Tag" color="success" />
+          <Chip className="chip" label="Tag2" color="primary" />
+          <Chip
+            className="chip"
+            label="Tag"
+            style={{ backgroundColor: "purple", color: "white" }}
+          />
+          <Typography margin={"0 1rem"} color={"var(--btn_blue_color)"}>
+            +3
+          </Typography>
+        </Box>
+      );
+    },
     cellClassName: "cell",
     align: "center",
   },
@@ -112,9 +132,9 @@ const columns = [
 const rows = [
   {
     id: 1,
-    contact: "adsd",
+    contact: "Contact Name English",
     persons: <GroupAvatars />,
-    country: "Pakistan",
+    country: "United States of America",
     tags: "tags",
   },
 ];
@@ -125,7 +145,7 @@ export default function DataGridDemo() {
       sx={{
         height: 400,
         width: "70%",
-        margin: "0 auto",
+        margin: "0 2rem",
         // "& .cell": {
         //   backgroundColor: "rgba(224, 183, 60, 0.55)",
         //   color: "#1a3e72",
@@ -137,7 +157,7 @@ export default function DataGridDemo() {
         rows={rows}
         columns={columns}
         pageSize={5}
-        rowsPerPageOptions={[5]}
+        rowsPerPageOptions={[10, 20, 50]}
         checkboxSelection
         headerHeight={30}
         disableSelectionOnClick

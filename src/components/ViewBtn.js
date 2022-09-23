@@ -178,7 +178,7 @@ export default function CustomizedMenus() {
           onClick={handleClose}
           disableRipple
         >
-          <Typography>Fax</Typography>
+          <Typography>Vat No</Typography>
           <MenuIcon />
         </MenuItem>
         <MenuItem
@@ -186,7 +186,7 @@ export default function CustomizedMenus() {
           onClick={handleClose}
           disableRipple
         >
-          <Typography>Fax</Typography>
+          <Typography>Registration No</Typography>
           <MenuIcon />
         </MenuItem>
         <MenuItem
@@ -194,7 +194,7 @@ export default function CustomizedMenus() {
           onClick={handleClose}
           disableRipple
         >
-          <Typography>Fax</Typography>
+          <Typography>Tags</Typography>
           <MenuIcon />
         </MenuItem>
         <MenuItem
@@ -202,7 +202,15 @@ export default function CustomizedMenus() {
           onClick={handleClose}
           disableRipple
         >
-          <Typography>Fax</Typography>
+          <Typography>You Owe</Typography>
+          <MenuIcon />
+        </MenuItem>
+        <MenuItem
+          style={{ display: "flex", justifyContent: "space-between" }}
+          onClick={handleClose}
+          disableRipple
+        >
+          <Typography>They Owe</Typography>
           <MenuIcon />
         </MenuItem>
       </StyledMenu>

@@ -7,6 +7,9 @@ import Chip from "@mui/material/Chip";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import PhoneIcon from "@mui/icons-material/Phone";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import EmailIconPopover from "./EmailIconPopover";
+import PhoneIconPopover from "./PhoneIconPopover";
+import WhatsAppIconPopover from "./WhatsappIconPopover";
 
 const AvatarPopOver = ({ person }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -20,19 +23,20 @@ const AvatarPopOver = ({ person }) => {
   };
 
   const open = Boolean(anchorEl);
-  const id = open ? "simple-popover" : undefined;
+  const avatarIdOpen = open ? "simple-popover" : undefined;
+
   return (
     <>
       <Avatar
         style={{ cursor: "pointer" }}
-        aria-describedby={id}
+        aria-describedby={avatarIdOpen}
         variant="contained"
         onClick={handleClick}
         alt="Remy Sharp"
         src={person.avatar}
       />
       <Popover
-        id={id}
+        id={avatarIdOpen}
         open={open}
         anchorEl={anchorEl}
         onClose={handleClose}
@@ -72,11 +76,19 @@ const AvatarPopOver = ({ person }) => {
             <Chip label="Employee" color="primary" />
           </Box>
           <Box sx={{ display: "flex" }}>
-            <AlternateEmailIcon
-              style={{ color: "grey", marginRight: "0.5rem" }}
-            />
-            <PhoneIcon style={{ color: "grey", marginRight: "0.5rem" }} />
-            <WhatsAppIcon style={{ color: "grey", marginRight: "0.5rem" }} />
+            <EmailIconPopover>
+              <AlternateEmailIcon
+                style={{ color: "grey", marginRight: "0.5rem" }}
+              />
+            </EmailIconPopover>
+            <PhoneIconPopover>
+              <PhoneIcon style={{ color: "grey", marginRight: "0.5rem" }} />
+            </PhoneIconPopover>
+
+            <WhatsAppIconPopover>
+              {" "}
+              <WhatsAppIcon style={{ color: "grey", marginRight: "0.5rem" }} />
+            </WhatsAppIconPopover>
           </Box>
           <Box>
             <p>

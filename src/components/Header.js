@@ -8,12 +8,12 @@ import InputBase from "@mui/material/InputBase";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
-import AccountCircle from "@mui/icons-material/AccountCircle";
 import NotificationsIcon from "@mui/icons-material/Notifications";
-import AppsIcon from "@mui/icons-material/Apps";
+import AppsOutlinedIcon from "@mui/icons-material/AppsOutlined";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import Button from "@mui/material/Button";
 import FormControl from "@mui/material/FormControl";
+import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import Select from "@mui/material/Select";
 
 const Search = styled("div")(({ theme }) => ({
@@ -107,7 +107,10 @@ export default function PrimarySearchAppBar() {
         <Toolbar>
           <FormControl sx={{ m: 1, minWidth: 200 }}>
             <Select
-              style={{ padding: "0 1rem !important" }}
+              style={{
+                padding: "0 1rem !important",
+                backgroundColor: "var(--grey-color)",
+              }}
               value={age}
               onChange={handleChange}
               displayEmpty
@@ -122,7 +125,7 @@ export default function PrimarySearchAppBar() {
 
           <Button
             style={{
-              color: "purple",
+              color: "var(--dark-blue)",
               fontWeight: "600",
               textTransform: "capitalize",
             }}
@@ -162,14 +165,14 @@ export default function PrimarySearchAppBar() {
               aria-label="show 17 new notifications"
               color="inherit"
             >
-              <HelpOutlineIcon />
+              <HelpOutlineIcon style={{ color: "grey" }} />
             </IconButton>
             <IconButton
               size="large"
               aria-label="show 4 new mails"
               color="inherit"
             >
-              <AppsIcon />
+              <AppsOutlinedIcon style={{ color: "grey", marginLeft: "1rem" }} />
             </IconButton>
             <IconButton
               size="large"
@@ -180,21 +183,9 @@ export default function PrimarySearchAppBar() {
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <AccountCircle />
+              <AccountCircleOutlinedIcon />
             </IconButton>
           </Box>
-          {/* <Box sx={{ display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
-              <MoreIcon />
-            </IconButton>
-          </Box> */}
         </Toolbar>
       </AppBar>
       {renderMenu}
