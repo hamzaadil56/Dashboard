@@ -211,7 +211,6 @@ export default function CustomizedMenus() {
           disableRipple
         >
           <Typography>They Owe</Typography>
-          <MenuIcon />
         </MenuItem>
       </StyledMenu>
     </div>
