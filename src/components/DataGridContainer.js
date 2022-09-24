@@ -29,7 +29,7 @@ const columns = [
   {
     field: "contact",
     headerName: "Contact",
-    minWidth: 200,
+    minWidth: 300,
     height: "20vh",
     headerClassName: "table-header",
     headerAlign: "center",
@@ -39,20 +39,31 @@ const columns = [
       return (
         <Box>
           <Typography
-            style={{ color: "var(--btn_blue_color)", fontSize: "large" }}
+            style={{
+              color: "var(--btn_blue_color)",
+              fontSize: "medium",
+              fontWeight: "bold",
+            }}
             variant="h6"
           >
             Contact Name English
           </Typography>
           <div>
-            <Typography style={{ color: "var(--btn_blue_color)" }} variant="p">
+            <Typography
+              style={{
+                color: "var(--btn_blue_color)",
+                textAlign: "right",
+                marginLeft: "5rem",
+              }}
+              variant="p"
+            >
               Arabic Name
             </Typography>
           </div>
           <Typography style={{ color: "varggrey" }} variant="p">
             A/C:78797887
           </Typography>
-          <div>
+          <Box style={{ display: "flex" }}>
             <Typography style={{ color: "grey" }} variant="p">
               Note: This is the contact relating jobs
             </Typography>
@@ -67,11 +78,11 @@ const columns = [
                   variant="contained"
                   color="primary"
                 >
-                  Organization{" "}
+                  Organization
                 </Button>
               </Badge>
             </ThemeProvider>
-          </div>
+          </Box>
           <div>
             <Typography
               style={{ color: "grey", fontSize: "small" }}
@@ -143,7 +154,11 @@ const columns = [
             label="Tag"
             style={{ backgroundColor: "purple", color: "white" }}
           />
-          <Typography margin={"0 1rem"} color={"var(--btn_blue_color)"}>
+          <Typography
+            sx={{ textAlign: "center" }}
+            margin={"0 2rem 0 2rem"}
+            color={"var(--btn_blue_color)"}
+          >
             +3
           </Typography>
         </Box>

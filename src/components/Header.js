@@ -185,8 +185,9 @@ export default function PrimarySearchAppBar() {
                 aria-haspopup="true"
                 onClick={handleProfileMenuOpen}
                 color="inherit"
+                style={{ padding: "0 5px" }}
               >
-                <AccountCircleOutlinedIcon />
+                <AccountCircleOutlinedIcon style={{ fontSize: "35px" }} />
               </IconButton>
               <div>
                 <Typography style={{ margin: 0, color: "grey" }} variant="p">

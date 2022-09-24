@@ -3,6 +3,8 @@ import Avatar from "@mui/material/Avatar";
 import Popover from "@mui/material/Popover";
 import Box from "@mui/material/Box";
 import { Typography } from "@mui/material";
+import CancelOutlinedIcon from "@mui/icons-material/CancelOutlined";
+import Button from "@mui/material/Button";
 
 export const persons = [
   {
@@ -57,20 +59,22 @@ const PersonsListPopover = ({ children }) => {
           horizontal: "left",
         }}
       >
-        <Box className="persons-lists-popover">
+        <Box
+          style={{ borderRadius: "0% !important" }}
+          className="persons-lists-popover"
+        >
           <Box
             style={{
               border: "1px solid black",
               display: "flex",
-              justifyContent: "center",
+              justifyContent: "space-between",
+              alignItems: "center",
             }}
           >
-            <Typography
-              style={{ textAlign: "center", margin: "0 auto" }}
-              variant="p"
-            >
-              Contact Persons List
-            </Typography>
+            <Typography variant="p">Contact Persons List</Typography>
+            <Button style={{ margin: "0", padding: "0" }} onClick={handleClose}>
+              <CancelOutlinedIcon style={{ color: "black" }} />
+            </Button>
           </Box>
           {persons.map((person) => (
             <Box
