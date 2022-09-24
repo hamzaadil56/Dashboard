@@ -11,9 +11,10 @@
 }
 .table-header {
   color: var(--btn_blue_color);
+  background-color: var(--light-grey);
+  width: 25% !important;
 }
 .cell {
-  text-align: center;
   align-items: center;
   justify-content: center;
   place-items: center;
@@ -43,4 +44,10 @@
 }
 .icons-popover {
   padding: 2rem;
+}
+.organization-btn {
+  padding: 0 !important;
+}
+.cell {
+  text-align: left;
 }

@@ -8,6 +8,7 @@ import Chip from "@mui/material/Chip";
 import PersonsListPopover from "./PersonsListPopover";
 import Badge from "@mui/material/Badge";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 
 const theme = createTheme({
   status: {
@@ -28,11 +29,18 @@ const theme = createTheme({
 const columns = [
   {
     field: "contact",
-    headerName: "Contact",
+
+    renderHeader: () => (
+      <>
+        <DescriptionOutlinedIcon style={{ color: "grey" }} />
+        {"Contact"}
+      </>
+    ),
     minWidth: 300,
     height: "20vh",
+    backgroundColor: "grey",
     headerClassName: "table-header",
-    headerAlign: "center",
+    headerAlign: "left",
     cellClassName: "cell",
     align: "center",
     renderCell: () => {
@@ -43,12 +51,25 @@ const columns = [
               color: "var(--btn_blue_color)",
               fontSize: "medium",
               fontWeight: "bold",
+              textAlign: "center",
             }}
             variant="h6"
           >
             Contact Name English
           </Typography>
-          <div>
+          <Box style={{ display: "flex", alignItems: "center" }}>
+            <DescriptionOutlinedIcon
+              style={{ color: "grey", margin: 0, padding: 0 }}
+            />
+            <Typography
+              style={{
+                textAlign: "center",
+                marginTop: "3px",
+                color: "var(--btn_blue_color)",
+              }}
+            >
+              3
+            </Typography>
             <Typography
               style={{
                 color: "var(--btn_blue_color)",
@@ -59,22 +80,48 @@ const columns = [
             >
               Arabic Name
             </Typography>
+          </Box>
+          <div>
+            <Typography
+              style={{
+                margin: "2rem 4rem",
+                textAlign: "center !important",
+                width: "100%",
+                color: "grey",
+                fontWeight: "500",
+              }}
+              variant="p"
+            >
+              A/C:78797887
+            </Typography>
           </div>
-          <Typography style={{ color: "varggrey" }} variant="p">
-            A/C:78797887
-          </Typography>
-          <Box style={{ display: "flex" }}>
-            <Typography style={{ color: "grey" }} variant="p">
+          <Box
+            style={{
+              display: "flex",
+              margin: "1rem 0",
+              justifyContent: "space-between",
+            }}
+          >
+            <Typography
+              style={{ color: "grey", textAlign: "left" }}
+              variant="p"
+            >
               Note: This is the contact relating jobs
             </Typography>
             <ThemeProvider theme={theme}>
               <Badge
                 badgeContent={1}
-                style={{ color: "black", backgroundColor: "yellow" }}
+                style={{ color: "black" }}
                 color="neutral"
               >
                 <Button
-                  style={{ width: "100px", fontSize: "10px" }}
+                  className="organization-btn"
+                  style={{
+                    width: "100px",
+                    fontSize: "15px",
+                    height: "30px",
+                    textTransform: "capitalize",
+                  }}
                   variant="contained"
                   color="primary"
                 >
@@ -83,14 +130,17 @@ const columns = [
               </Badge>
             </ThemeProvider>
           </Box>
-          <div>
-            <Typography
-              style={{ color: "grey", fontSize: "small" }}
-              variant="p"
-            >
-              Search Key Words: text1,text2,text3,text4,text5
-            </Typography>
-          </div>
+
+          <Typography
+            style={{
+              color: "grey",
+              fontSize: "small",
+              textAlign: "left !important",
+            }}
+            variant="p"
+          >
+            Search Key Words: text1,text2,text3,text4,text5
+          </Typography>
         </Box>
       );
     },
@@ -167,47 +217,6 @@ const columns = [
     cellClassName: "cell",
     align: "center",
   },
-  //   {
-  //     field: "city",
-  //     headerName: "City",
-  //     minWidth: 150,
-  //     height: "10vh",
-  //     headerClassName: "table-header",
-  //     headerAlign: "center",
-  //     cellClassName: "cell",
-  //     align: "center",
-  //   },
-  //   {
-  //     field: "contact_details",
-  //     headerName: "Contact Details",
-  //     minWidth: 150,
-  //     height: "10vh",
-  //     headerClassName: "table-header",
-  //     headerAlign: "center",
-  //     cellClassName: "cell",
-  //     align: "center",
-  //   },
-  //   {
-  //     field: "financial_details",
-  //     headerName: "Financial Details",
-  //     minWidth: 150,
-  //     height: "10vh",
-  //     headerClassName: "table-header",
-  //     headerAlign: "center",
-  //     cellClassName: "cell",
-  //     align: "center",
-  //   },
-  //   {
-  //     field: "they_owe",
-  //     headerName: "They Owe",
-  //     minWidth: 150,
-
-  //     editable: true,
-  //     headerAlign: "center",
-  //     headerClassName: "table-header",
-  //     cellClassName: "cell",
-  //     align: "center",
-  //   },
 ];
 
 const rows = [
@@ -225,13 +234,8 @@ export default function DataGridDemo() {
     <Box
       sx={{
         height: 400,
-        width: "70%",
+        width: "75%",
         margin: "0 2rem",
-        // "& .cell": {
-        //   backgroundColor: "rgba(224, 183, 60, 0.55)",
-        //   color: "#1a3e72",
-        //   fontWeight: "600",
-        // },
       }}
     >
       <DataGrid
